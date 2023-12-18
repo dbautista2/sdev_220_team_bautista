@@ -1,0 +1,19 @@
+<!-- signature.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sides</title>
+</head>
+<body>
+    <h1>Our Sides</h1>
+    <ul>
+        {% for side in sides %}
+            <li>
+                <h2>{{ side.name }}</h2>
+                <p>{{ side.description }}</p>
+                <p>Price: ${{ side.compute_price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

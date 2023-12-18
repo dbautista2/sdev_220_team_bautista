@@ -1,0 +1,19 @@
+<!-- signature.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toppings</title>
+</head>
+<body>
+    <h1>Our Toppings</h1>
+    <ul>
+        {% for topping in toppings %}
+            <li>
+                <h2>{{ topping.name }}</h2>
+                <p>{{ topping.description }}</p>
+                <p>Price: ${{ topping.compute_price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+Displays the order summary with details such as order number and total price.
+python
+
+from django.shortcuts import render, redirect
+from .models import Order
+
+def submit_order(request):
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            # Logic to create an Order instance and save it
+            # ...
+            return redirect('order_summary', order_id=order.id)
+    else:
+        form = OrderForm()
+    return render(request, 'burgorders/menu_order.html', {'order_form': form})
+
+def order_summary(request, order_id):
+    order = Order.objects.get(pk=order_id)
+    # Assuming additional logic to retrieve order details
+    context = {'order': order}
+    return render(request, 'burgorders/order_summary.html', context)
+
+```
+```html
+
+{% extends 'base.html' %}
+{% block content %}
+<h1>Order Summary</h1>
+<p>Order Number: {{ order.id }}</p>
+<!-- Displaying itemized order details -->
+<p>Total Price: {{ order.total_price }}</p>
+<p>Thank you for your order!</p>
+<script>
+    setTimeout(function() {
+        window.location.href = '/menu-order'; // Redirect to MenuOrderView
+    }, 5000); // Redirect after 5 seconds
+</script>
+{% endblock %}

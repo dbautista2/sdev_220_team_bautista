@@ -1,0 +1,19 @@
+<!-- signature.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signature Burgers</title>
+</head>
+<body>
+    <h1>Our Signature Burgers</h1>
+    <ul>
+        {% for burger in burgers %}
+            <li>
+                <h2>{{ burger.name }}</h2>
+                <p>{{ burger.description }}</p>
+                <p>Price: ${{ burger.compute_price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

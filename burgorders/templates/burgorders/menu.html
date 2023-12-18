@@ -1,0 +1,62 @@
+<!-- menu.html -->
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<head>
+    <title>Menu</title>
+</head>
+{% endblock %}
+<body>
+    <h1>Our Signature Burgers</h1>
+    <ul>
+        {% for burger in burgers %}
+            <li>
+                <h2>{{ burger.name }}</h2>
+                <p>{{ burger.description }}</p>
+                <p>Price: ${{ burger.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Our Sides</h1>
+    <ul>
+        {% for side in sides %}
+            <li>
+                <h2>{{ side.name }}</h2>
+                <p>{{ side.description }}</p>
+                <p>Price: ${{ side.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Drinks</h1>
+    <ul>
+        {% for drink in drinks %}
+            <li>
+                <h2>{{ drink.name }}</h2>
+                <p>{{ drink.description }}</p>
+                <p>Price: ${{ drink.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Sauces</h1>
+    <ul>
+        {% for sauce in sauces %}
+            <li>
+                <h2>{{ sauce.name }}</h2>
+                <p>{{ sauce.description }}</p>
+                <p>Price: ${{ sauce.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Menu and Order Form</h1>
+
+    <form id="orderForm" action="/menu-order/" method="post">
+        {% csrf_token %}
+        {{ order_form.as_p }}
+        <input type="submit" value="Complete Order">
+    </form>
+</body>
+</html>
+

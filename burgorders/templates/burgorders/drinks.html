@@ -1,0 +1,19 @@
+<!-- signature.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drinks</title>
+</head>
+<body>
+    <h1>Our Drinks</h1>
+    <ul>
+        {% for drink in drinks %}
+            <li>
+                <h2>{{ drink.name }}</h2>
+                <p>{{ drink.description }}</p>
+                <p>Price: ${{ drink.compute_price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

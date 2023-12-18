@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'burgorder/static/style.css' %}">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Sauces</title>
+</head>
+<body>
+    <h1>Sauces</h1>
+    <ul>
+        {% for sauce in sauces %}
+            <li>
+                <h2>{{ sauce.name }}</h2>
+                <p>{{ sauce.description }}</p>
+                <p>Price: ${{ sauce.compute_price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
