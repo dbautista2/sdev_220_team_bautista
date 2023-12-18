@@ -14,6 +14,7 @@ The user can choose from a variety of toppings, sides, and drinks.
 ## Summary
 Originally, we wanted to add Combos, multiple burgers per order, and show the grand total, but due to us running out of time, we had to take a step back and make the decision to leave some things out. 
 Menu.html is the template used to show the data. Form.py is what allowed us to create the checkboxes for clicking specific items to add to the order. Models.py allowed us to store the information in a database. Views.py grabbed the data and passed it to the template. With our knowledge of Django, we thought we would be able to implement these in our project, but we just did not have enough time to get it all working. We created urls and other html files that we did not end up using, but it might be good to see our logic behind why we created them.
+Created an ERD named my_project_visualized.png. It shows the relationships between everything involed in the program. 
 
 ## Django Usage
 The following Django components are utilized to create the user driven POS (point of sale)
