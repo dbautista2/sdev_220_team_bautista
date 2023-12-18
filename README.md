@@ -12,7 +12,7 @@ It utilizes the Django framework to create a Point-of-sale webapp that allows th
 The user can choose from a variety of toppings, sides, and drinks. 
 
 ## Summary
-Originally, we wanted to add Combos, multiple burgers per order, and show the grand total, but due to us running out of time, we had to take a step back and make the decision to leave some things out. 
+Originally, we wanted to add Combos, multiple burgers per order, and show the grand total, but due to us running out of time, we had to take a step back and make the decision to leave some things out. Also, some of the items do not have prices. We thought getting the program running and working properly was the highest priority. 
 Menu.html is the template used to show the data. Form.py is what allowed us to create the checkboxes for clicking specific items to add to the order. Models.py allowed us to store the information in a database. Views.py grabbed the data and passed it to the template. With our knowledge of Django, we thought we would be able to implement these in our project, but we just did not have enough time to get it all working. We created urls and other html files that we did not end up using, but it might be good to see our logic behind why we created them.
 Created an ERD named my_project_visualized.png. It shows the relationships between everything involed in the program. 
 
@@ -47,7 +47,9 @@ You may now add Burgers, Buns, Patties, Toppings, Sides, and Drinks these models
 You can cannot add Combos or Orders as they are for record keeping purposes.
 Refund capabilities do not exist in the application.
 ## Customer Experience
-Open a browser and navigate to http://localhost:8000/burgorders/welcome/
+Open a browser and navigate to http://localhost:8000/menu-order/
+Read the menu and decide which items you want to add. Scroll down to the bottom of the page and click the buttons next to the items. Go through the burgers, sides, drinks, sauces. When you are finished adding your items, click complete order. It will then take you to page "Thank you for ordering".
+
 
 ## Dumping data
 You can configure your menu by editing the Burger, Bun, Patty, Topping, Side, and Drink models in the admin page.
